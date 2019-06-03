@@ -7,6 +7,10 @@ import graphQLSchema from './graphql/schema'
 import graphQLResolvers from './graphql/resolvers'
 require('dotenv').config()
 
+
+//importing the controller 
+import {getPlaySToreData} from '../server/controller/playstore_app'
+
 const app=express()
 
 //using cors :
@@ -23,6 +27,14 @@ expressGraphQl({
     rootValue:graphQLResolvers,
     graphiql:true
 }))
+
+
+app.use('/root',async (req,res)=>{
+    console.log("hello")
+    let results = await getPlaySToreData()
+    // console.log(results)
+    res.json(results)
+})
 
 function main(){
     const port = process.env.PORT || 8080

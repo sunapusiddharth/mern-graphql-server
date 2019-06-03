@@ -1,5 +1,6 @@
-import mongoose from 'mongoose'
-import {Schema} from 'mongoose'
+// import mongoose from 'mongoose'
+const mongoose = require('mongoose')
+// import {Schema} from 'mongoose'
 
 const UserSchema= new  mongoose.Schema({
     email:{
@@ -15,4 +16,7 @@ const UserSchema= new  mongoose.Schema({
 })
 
 
-export default mongoose.model('User',UserSchema)
+module.exports = mongoose.model('User',UserSchema)
+
+
+ 
