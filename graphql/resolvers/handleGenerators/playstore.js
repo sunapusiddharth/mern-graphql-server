@@ -19,3 +19,10 @@ export  async function getPlaystoreAppsByCategory(Category){
     ])
     return aggregated_result3
 }
+
+
+export async function getAppsByCategory({Category}){
+    // console.log(Category)
+    let categorised_results = await PlaystoreApp.find({"Category":Category})
+    return categorised_results
+}

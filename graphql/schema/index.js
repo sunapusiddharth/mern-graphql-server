@@ -34,6 +34,7 @@ export default buildSchema(`
         verifyToken(token:String!):User
         getAllPlayStoreApps(Category:String):[PlaystoreApp]
         getPlaystoreAppsByCategory(Category:String):[PlaystoreAppByCategory]
+        getAppsByCategory(Category:String):[PlaystoreApp]
     }
 
     type RootMuatation{
